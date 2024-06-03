@@ -1,0 +1,12 @@
+{
+  "name": "django-project",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "sass": "^1.32.8"
+  },
+  "scripts": {
+    "build-css": "sass dash/static/sass/product_list.scss dash/static/css/product_list.css",
+    "watch-css": "sass --watch dash/static/sass/product_list.scss:dash/static/css/product_list.css"
+  }
+}
