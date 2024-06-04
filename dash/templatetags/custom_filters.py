@@ -1,14 +1,8 @@
 from django import template
+import locale
 
 register = template.Library()
-
 @register.filter
 def currency(value):
-    """
-    Formatea el valor como moneda.
-    """
-    try:
-        value = float(value)
-    except (ValueError, TypeError):
-        return value
-    return "${:,.2f}".format(value)
+    locale.setlocale(locale.LC_ALL, '')  # Configura la configuración regional actual del sistema
+    return locale.currency(value, grouping=True)
