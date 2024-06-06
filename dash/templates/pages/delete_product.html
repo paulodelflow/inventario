@@ -3,17 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete Product</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Document</title>
 </head>
 <body>
-    <div class="container mt-5">
-        <h3>Are you sure you want to delete the product "{{ product.name }}"?</h3>
-        <form method="post">
-            {% csrf_token %}
-            <button type="submit" class="btn btn-danger">Yes, delete</button>
-            <a href="{% url 'index' %}" class="btn btn-secondary">No, cancel</a>
-        </form>
-    </div>
+    
+<div id="addProductFormContainer">
+    <h2>Agregar Producto</h2>
+    <form id="addProductForm" method="post" enctype="multipart/form-data" action="{% url 'add_product' %}">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-6">
+                {{ form.name }}
+            </div>
+            <div class="col-md-6">
+                {{ form.price }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                {{ form.stock }}
+            </div>
+            <div class="col-md-6">
+                {{ form.image }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                {{ form.description }}
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Agregar Producto</button>
+    </form>
+</div>
+{% endblock %}
+
 </body>
 </html>

@@ -24,6 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('delete/<int:id>/', views.delete_product, name='delete_product'),
-    path('add/', views.add_product, name='add_product'), # Ruta para la página de inicio
+    path('add/', views.add_product, name='add_product'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

@@ -1,268 +1,268 @@
 body {
-        background: linear-gradient(#7ad1ff, #3a99de) fixed;
-        padding: 40px;
-        font-family: 'Rubik', sans-serif;
-        margin: 0;
-    }
-    .hidden {
-        display: none;
-    }
-    
-    
-    
-    .sidenav {
-        width: 250px;
-        height: calc(100% - 80px);
-        position: fixed;
-        background: #fff;
-        border-radius: 12px 0px 0px 12px;
-    }
-    
-    .msidenav {
-        width: 250px;
-        height: calc(100%);
-        top: 0;
-        z-index: 99;
-        left: -250px;
-        position: fixed;
-        background: #fff;
-        border-radius: 0px;
-        box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
-        transition-duration: 500ms;
-    }
-    
-    .content-area {
-        background-color: #f6f6fc;
-        position: fixed;
-        width: calc(100vw - 340px);
-        height: calc(100vh - 80px);
-        margin-left: 250px;
-        border-radius: 0px 12px 12px 0px;
-    }
-    
-    .content-bar {
-        width: calc(100% - 40px);
-        margin-left: 20px;
-        margin-top: 10px;
-        background: #fff;
-        box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.06);
-        border-radius: 12px;
-        display: grid;
-        grid-template-rows: 1fr;
-        grid-template-columns: 0fr 1fr 1fr 3fr 0fr;
-    }
-    
-    
-    .page-title {
-        font-weight: 500;
-        font-size: 26px;
-        padding-left: 20px;
-        padding-top: 20px;
-    }
-    
-    .page-desc {
-        padding-left: 20px;
-        font-weight: 300;
-        color: #525252;
-    }
-    
-    .logo {
-        font-family: 'Rubik', sans-serif;
-        font-weight: 600;
-        font-size: 70px;
-        background: -webkit-linear-gradient(#4d4d4d, #171717);
-        -webkit-background-clip: text;
-        webkit-text-fill-color: transparent;
-        text-align: center;
-        margin-top: 20px;
-        padding: 0px;
-        margin-bottom: 20px;
-    }
-    
-    .searchbar {
-        display: flex;
-        align-items: center;
-        padding: 0 8px;
-    }
-    
-    .search {
-        flex: 1; /* Toma el espacio restante */
-        border: 1px solid #dfe2e6; /* Ajusta el borde según sea necesario */
-        border-radius: 12px 0px 0px 12px;
-        padding: 10px;
-        font-family: 'Rubik', sans-serif;
-        font-weight: 300;
-        color: #525252;
-    }
-    
-    .sbtn {
-        padding: 10px 15px;
-        border: 1px solid #dfe2e6; /* Ajusta el borde según sea necesario */
-        border-radius: 0px 12px 12px 0px;
-        background: none;
-        color: #d0d4d9;
-        cursor: pointer;
-    }
-    
-    
-    
-    .sbtn:focus {
-        outline: none;
-    }
-    
-    .sbtn:hover {
-        color: #a8adb3;
-    }
-    
-    .sbtn:active {
-        color: black;
-    }
-    
-    .spacer {
-        margin: 20px;
-    }
-    
-    .mbtn {
-        border-radius: 12px;
-        text-align: left;
-        margin-left: 20px;
-        width: 210px;
-        height: 40px;
-        border: none;
-        background: none;
-        font-family: 'Rubik', sans-serif;
-        font-size: 18px;
-        color: #d0d4d9;
-        transition-duration: 0ms;
-        cursor: pointer;
-    }
-    
-    .icon {
-        padding-left: 20px;
-        padding-right: 10px;
-        color: #b4b9bf;
-    }
-    
-    .mbtn:hover {
-        transition-duration: 0ms;
-        text-align: left;
-        width: 210px;
-        height: 40px;
-        border: none;
-        background: #f6f6fc;
-        color: black;
-    }
-    
-    .mbtn:hover i {
-        color: #3895e0;
-    }
-    
-    .mbtn:focus {
-        outline: none;
-        background: #3a94de;
-        color: rgba(255, 255, 255, 0.9);
-        cursor: pointer;
-    }
-    
-    .mbtn:focus i {
-        color: white;
-    }
-    
-    .mobilebar {
-        width: 100%;
-        height: 70px;
-        background: #fff;
-        box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.06);
-        display: none;
-    }
-    
-    .sml {
-        text-align: left;
-        font-size: 34px;
-        display: inline-block;
-        padding-left: 20px;
-        margin-top: 14px;
-    }
-    
-    .mnubtn {
-        height: 35px;
-        float: right;
-        margin-right: 0px;
-        border: none;
-        border-radius: 12px;
-        background: -webkit-linear-gradient(#4d4d4d, #171717);
-        color: white;
-        font-size: 18px;
-        padding: 8px 10px;
-    }
-    
-    .mnubtn:focus {
-        outline: none;
-    }
-    
-    .mnubtn:hover {
-        background: black;
-    }
-    
-    .mnubtn:active {
-        background: #3a94de;
-        color: black;
-    }
-    
-    .mbh {
-        display: inline-block;
-        float: right;
-        margin-top: 17px;
-        margin-right: 20px;
-    }
-    
-    .itemnum {
-        padding: 15px;
-        color: gray;
-        font-weight: 300;
-    }
-    
-    .itemtitle {
-        padding: 15px;
-        padding-bottom: 15px;
-        color: black;
-        min-width: 80px;
-    }
-    
-    .itemprice {
-        padding: 15px;
-        padding-bottom: 15px;
-        color: #319959;
-        min-width: 80px;
-    }
-    
-    .itemstock {
-        padding: 15px;
-        padding-bottom: 15px;
-        color: black;
-        font-weight: 300;
-    }
-    
-    .low-stock {
-        position: absolute;
+    background: linear-gradient(#7ad1ff, #3a99de) fixed;
+    padding: 40px;
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.sidenav {
+    width: 250px;
+    height: calc(100% - 80px);
+    position: fixed;
+    background: #fff;
+    border-radius: 12px 0px 0px 12px;
+}
+
+.msidenav {
+    width: 250px;
+    height: calc(100%);
+    top: 0;
+    z-index: 99;
+    left: -250px;
+    position: fixed;
+    background: #fff;
+    border-radius: 0px;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    transition-duration: 500ms;
+}
+
+.content-area {
+    background-color: #f6f6fc;
+    position: fixed;
+    width: calc(100vw - 340px);
+    height: calc(100vh - 80px);
+    margin-left: 250px;
+    border-radius: 0px 12px 12px 0px;
+}
+
+.content-bar {
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    margin-top: 10px;
+    background: #fff;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.06);
+    border-radius: 12px;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 0fr 1fr 1fr 3fr 0fr;
+}
+
+
+.page-title {
+    font-weight: 500;
+    font-size: 26px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.page-desc {
+    padding-left: 20px;
+    font-weight: 300;
+    color: #525252;
+}
+
+.logo {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
+    font-size: 70px;
+    background: -webkit-linear-gradient(#4d4d4d, #171717);
+    -webkit-background-clip: text;
+    webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-top: 20px;
+    padding: 0px;
+    margin-bottom: 20px;
+}
+
+.searchbar {
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+}
+
+.search {
+    flex: 1; /* Toma el espacio restante */
+    border: 1px solid #dfe2e6; /* Ajusta el borde según sea necesario */
+    border-radius: 12px 0px 0px 12px;
+    padding: 10px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+    color: #525252;
+}
+
+.sbtn {
+    padding: 10px 15px;
+    border: 1px solid #dfe2e6; /* Ajusta el borde según sea necesario */
+    border-radius: 0px 12px 12px 0px;
+    background: none;
+    color: #d0d4d9;
+    cursor: pointer;
+}
+
+.sbtn:focus {
+    outline: none;
+}
+
+.sbtn:hover {
+    color: #a8adb3;
+}
+
+.sbtn:active {
+    color: black;
+}
+
+.spacer {
+    margin: 20px;
+}
+
+.mbtn {
+    border-radius: 12px;
+    text-align: left;
+    margin-left: 20px;
+    width: 210px;
+    height: 40px;
+    border: none;
+    background: none;
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    color: #d0d4d9;
+    transition-duration: 0ms;
+    cursor: pointer;
+}
+
+.icon {
+    padding-left: 20px;
+    padding-right: 10px;
+    color: #b4b9bf;
+}
+
+.mbtn:hover {
+    transition-duration: 0ms;
+    text-align: left;
+    width: 210px;
+    height: 40px;
+    border: none;
+    background: #f6f6fc;
+    color: black;
+}
+
+.mbtn:hover i {
+    color: #3895e0;
+}
+
+.mbtn:focus {
+    outline: none;
+    background: #3a94de;
+    color: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+}
+
+.mbtn:focus i {
+    color: white;
+}
+
+.mobilebar {
+    width    : 100%;
+    height: 70px;
+    background: #fff;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.06);
+    display: none;
+}
+
+.sml {
+    text-align: left;
+    font-size: 34px;
+    display: inline-block;
+    padding-left: 20px;
+    margin-top: 14px;
+}
+
+.mnubtn {
+    height: 35px;
+    float: right;
+    margin-right: 0px;
+    border: none;
+    border-radius: 12px;
+    background: -webkit-linear-gradient(#4d4d4d, #171717);
+    color: white;
+    font-size: 18px;
+    padding: 8px 10px;
+}
+
+.mnubtn:focus {
+    outline: none;
+}
+
+.mnubtn:hover {
+    background: black;
+}
+
+.mnubtn:active {
+    background: #3a94de;
+    color: black;
+}
+
+.mbh {
+    display: inline-block;
+    float: right;
+    margin-top: 17px;
+    margin-right: 20px;
+}
+
+.itemnum {
+    padding: 15px;
+    color: gray;
+    font-weight: 300;
+}
+
+.itemtitle {
+    padding: 15px;
+    padding-bottom: 15px;
+    color: black;
+    min-width: 80px;
+}
+
+.itemprice {
+    padding: 15px;
+    padding-bottom: 15px;
+    color: #319959;
+    min-width: 80px;
+}
+
+.itemstock {
+    padding: 15px;
+    padding-bottom: 15px;
+    color: black;
+    font-weight: 300;
+}
+
+.low-stock {
+    position: absolute;
     color: red;
     font-weight: 300;
     margin-top: 15px; 
     margin-left: 800px; 
-    }
-    
+}
+
 #addProductForm {
     background-color: #ffffff;
-    padding: 20px;
+    padding: 15px; /* Reduce el padding del formulario */
     border: 1px solid #dee2e6;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    max-width: 700px; /* Ajusta el ancho máximo del formulario según tus necesidades */
+    margin-left: auto; /* Centra el formulario horizontalmente */
+    margin-right: auto; /* Centra el formulario horizontalmente */
 }
 
 #addProductForm h2 {
-    font-size: 20px;
-    margin-bottom: 15px;
+    font-size: 18px; /* Reduce el tamaño del título del formulario */
+    margin-bottom: 10px; /* Reduce el margen inferior del título */
 }
 
 #addProductForm form {
@@ -273,8 +273,8 @@ body {
 #addProductForm form input,
 #addProductForm form textarea,
 #addProductForm form button {
-    margin-bottom: 10px;
-    padding: 10px;
+    margin-bottom: 8px; /* Reduce el margen inferior de los elementos del formulario */
+    padding: 8px; /* Reduce el padding de los elementos del formulario */
     border: 1px solid #dee2e6;
     border-radius: 3px;
 }
@@ -290,6 +290,7 @@ body {
 #addProductForm form button:hover {
     background-color: #0056b3;
 }
+
     
     .btncontainer {
         width: 90px;
@@ -359,4 +360,5 @@ body {
             margin-right: 5px;
         }
     }
-    
+
+

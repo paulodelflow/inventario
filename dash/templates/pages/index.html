@@ -1,5 +1,6 @@
 {% load static %}
 {% load custom_filters %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,6 +9,7 @@
     <title>Inventario</title>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/product_list.css' %}">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -21,7 +23,6 @@
         <div class="spacer"></div>
         <button class="mbtn" id="inventoryBtn"><i class="fa fa-list icon" aria-hidden="true"></i> Inventario</button>
         <button class="mbtn" id="addProductBtn"><i class="fa fa-shopping-cart icon" aria-hidden="true" ></i> Agregar</button>
-
         <button class="mbtn" id="accountBtn"><i class="fa fa-user icon" aria-hidden="true"></i> Cuenta</button>
         <button class="mbtn" id="summaryBtn"><i class="fa fa-bolt icon" aria-hidden="true"></i> Resumen</button>
         <button class="mbtn" id="optionFiveBtn"><i class="fa fa-calendar icon" aria-hidden="true"></i> Option Five</button>
@@ -36,12 +37,36 @@
         </div>
         <div class="page-title">Inventario</div>
         
-        <div id="addProductFormContainer" style="display:none;">
-            <h2>Agregar Producto</h2>
+        <div id="addProductFormContainer" class="form-container">
             <form id="addProductForm" method="post" enctype="multipart/form-data" action="{% url 'add_product' %}">
                 {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit">Agregar Producto</button>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="{{ form.name.id_for_label }}" class="custom-form-label">Nombre</label>
+                        {{ form.name }}
+                    </div>
+                    <div class="col-md-6">
+                        <label for="{{ form.price.id_for_label }}" class="custom-form-label">Precio</label>
+                        {{ form.price }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="{{ form.stock.id_for_label }}" class="custom-form-label">Stock</label>
+                        {{ form.stock }}
+                    </div>
+                    <div class="col-md-6">
+                        <label for="{{ form.image.id_for_label }}" class="custom-form-label">Imagen</label>
+                        {{ form.image }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="{{ form.description.id_for_label }}" class="custom-form-label">Descripción</label>
+                        {{ form.description }}
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Agregar Producto</button>
             </form>
         </div>
         
