@@ -1,16 +1,15 @@
 {% load static %}
 {% load custom_filters %}
-{% load static %}
-{% load custom_filters %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventory</title>
+    <title>Inventario</title>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{% static 'css/product_list.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div class="sidenav">
@@ -20,11 +19,12 @@
             <button class="sbtn" onclick="searchProduct()"><i class="fa fa-search" aria-hidden="true"></i></button>
         </div>
         <div class="spacer"></div>
-        <button class="mbtn"><i class="fa fa-list icon" aria-hidden="true"></i> Option One</button>
-        <button class="mbtn"><i class="fa fa-shopping-cart icon" aria-hidden="true"></i> Option Two</button>
-        <button class="mbtn"><i class="fa fa-user icon" aria-hidden="true"></i> Option Three</button>
-        <button class="mbtn"><i class="fa fa-bolt icon" aria-hidden="true"></i> Option Four</button>
-        <button class="mbtn"><i class="fa fa-calendar icon" aria-hidden="true"></i> Option Five</button>
+        <button class="mbtn" id="inventoryBtn"><i class="fa fa-list icon" aria-hidden="true"></i> Inventario</button>
+        <button class="mbtn" id="addProductBtn"><i class="fa fa-shopping-cart icon" aria-hidden="true" ></i> Agregar</button>
+
+        <button class="mbtn" id="accountBtn"><i class="fa fa-user icon" aria-hidden="true"></i> Cuenta</button>
+        <button class="mbtn" id="summaryBtn"><i class="fa fa-bolt icon" aria-hidden="true"></i> Resumen</button>
+        <button class="mbtn" id="optionFiveBtn"><i class="fa fa-calendar icon" aria-hidden="true"></i> Option Five</button>
     </div>
     
     <div class="content-area">
@@ -34,10 +34,21 @@
                 <button class="mnubtn" onclick="slideMenu()"><i class="fa fa-bars" aria-hidden="true"></i></button>
             </div>
         </div>
-        <div class="page-title">Inventory</div>
-        <div class="page-desc">View and manage your stock</div>
+        <div class="page-title">Inventario</div>
         
-        <div class="search-results"> <!-- Agregamos la clase "search-results" aquí -->
+        <div id="addProductFormContainer" style="display:none;">
+            <h2>Agregar Producto</h2>
+            <form id="addProductForm" method="post" enctype="multipart/form-data" action="{% url 'add_product' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Agregar Producto</button>
+            </form>
+        </div>
+        
+        
+        
+        
+        <div id="productList" class="search-results" style="display:none;">
             {% for product in products %}
             <div class="content-bar">
                 <div class="itemnum">#{{ product.id }}</div>
@@ -52,12 +63,12 @@
 
                 <div class="btncontainer">
                     <button class="cbbtn" onclick="editProduct()"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                    <button type="button" class="cbbtn" onclick="confirmDelete({{ product.id }})"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                    <button type="button" class="cbbtn" onclick="confirmDelete('{{ product.id }}')"><i class="fa fa-trash" aria-hidden="true"></i></button>
                     <form id="deleteForm{{ product.id }}" method="post" action="{% url 'delete_product' product.id %}" style="display:none;">
                         {% csrf_token %}
                     </form>
                 </div>
-            </div>
+                            </div>
             {% endfor %}
             
             {% if not products %}

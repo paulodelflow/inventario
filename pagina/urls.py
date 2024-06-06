@@ -23,6 +23,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('delete/<int:product_id>/', views.delete_product, name='delete_product'),  # Ruta para la página de inicio
+    path('delete/<int:id>/', views.delete_product, name='delete_product'),
+    path('add/', views.add_product, name='add_product'), # Ruta para la página de inicio
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
